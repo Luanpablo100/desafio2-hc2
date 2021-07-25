@@ -3,13 +3,18 @@ import './AddThings.css'
 
 const AddThings = ({handleAddItem}) => {
 
-    const [inputData, setInputData] = useState('')
-        const handleInputChange = (e) => {
-            setInputData(e.target.value)
-        }
-
+    let [inputData, setInputData] = useState('')
         const handleAddTaskClick = () => {
-            if(inputData !== "") {
+            let dataName = document.getElementById('nameinput').value
+            let dataLink = document.getElementById('linkinput').value
+
+            inputData = {
+                name: dataName,
+                imgLink: dataLink
+            }
+
+            if(inputData.name !== "" & inputData.imgLink !== "") {
+                console.log(inputData)
                 handleAddItem(inputData)
                 setInputData('')
             } else {
@@ -18,15 +23,27 @@ const AddThings = ({handleAddItem}) => {
         }
 
     return ( 
-        <>
-           <input 
-                onChange ={handleInputChange} 
-                type="text"
-                value={inputData}
-                className="input-add"
-            />
-            <button className="button-add" onClick={handleAddTaskClick}>Adicionar</button>
-        </>
+        <div className="add-div">
+            <div>
+                <label>Nome</label>
+                <input
+                    type="text"
+                    className="input-add"
+                    placeholder="Cadastre alguma coisa..."
+                    id="nameinput"
+                />
+            </div>
+            <div>
+                <label>Link da imagem</label>
+                <input 
+                    type="url"
+                    className="input-add"
+                    placeholder="https://..."
+                    id="linkinput"
+                />
+            </div>
+            <button className="button-add" onClick={handleAddTaskClick}>Adicionar<img src="/add.png" alt="" className="add-img"/></button>
+        </div>
      );
 }
  

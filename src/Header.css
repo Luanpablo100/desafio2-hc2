@@ -1,7 +1,10 @@
 header {
     width: 100vw;
-    background-color: rgb(6, 2, 61);
+    background-color: rgb(255, 105, 51);
     padding: 10px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 header h1 {
