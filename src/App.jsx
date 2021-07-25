@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import Items from './components/Items';
-import AddThins from './components/Add';
+import AddThins from './components/AddThings';
 
 const App = () => {
 
@@ -23,18 +23,32 @@ const App = () => {
     }
   ])
 
+  const handleAddProduct = (itemData) => {
+    const newProducts = [...registeredProducts, {
+      name: itemData
+  }]
+    setProduct(newProducts)
+  }
+
+  const handleAddClient = (itemData) => {
+    const newClients = [...registeredClients, {
+      name: itemData
+  }]
+    setClient(newClients)
+  }
+
   return (
     <div className="container">
       <div>
           <div className="products">
             <h1>Produtos promocionais</h1>
             <Items itemsData={registeredProducts}/>
-            <AddThins/>
+            <AddThins handleAddItem={handleAddProduct}/>
           </div>
           <div className="clients">
             <h2>Nossos clients</h2>
             <Items itemsData={registeredClients}/>
-            <AddThins/>
+            <AddThins handleAddItem={handleAddClient}/>
           </div>
       </div>
       <div>
