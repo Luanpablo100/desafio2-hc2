@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
+import './AddThings.css'
 
-const AddThins = ({handleAddItem}) => {
+const AddThings = ({handleAddItem}) => {
 
     const [inputData, setInputData] = useState('')
         const handleInputChange = (e) => {
@@ -8,8 +9,12 @@ const AddThins = ({handleAddItem}) => {
         }
 
         const handleAddTaskClick = () => {
-            handleAddItem(inputData)
-            setInputData('')
+            if(inputData !== "") {
+                handleAddItem(inputData)
+                setInputData('')
+            } else {
+                alert('Preencha o campo')
+            }
         }
 
     return ( 
@@ -18,10 +23,11 @@ const AddThins = ({handleAddItem}) => {
                 onChange ={handleInputChange} 
                 type="text"
                 value={inputData}
+                className="input-add"
             />
-            <button onClick={handleAddTaskClick}>Adicionar</button>
+            <button className="button-add" onClick={handleAddTaskClick}>Adicionar</button>
         </>
      );
 }
  
-export default AddThins;
+export default AddThings;

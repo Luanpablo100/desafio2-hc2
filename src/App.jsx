@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import Items from './components/Items';
-import AddThins from './components/AddThings';
+import AddThings from './components/AddThings';
 
 const App = () => {
 
@@ -27,6 +27,10 @@ const App = () => {
     const newProducts = [...registeredProducts, {
       name: itemData
   }]
+  
+  const dataConverted = JSON.stringify(newProducts)
+  localStorage.setItem('registerProduct', dataConverted);
+
     setProduct(newProducts)
   }
 
@@ -34,6 +38,9 @@ const App = () => {
     const newClients = [...registeredClients, {
       name: itemData
   }]
+  const dataConverted = JSON.stringify(newClients)
+  localStorage.setItem('registerClient', dataConverted);
+
     setClient(newClients)
   }
 
@@ -41,14 +48,14 @@ const App = () => {
     <div className="container">
       <div>
           <div className="products">
-            <h1>Produtos promocionais</h1>
+            <h1>Produtos</h1>
             <Items itemsData={registeredProducts}/>
-            <AddThins handleAddItem={handleAddProduct}/>
+            <AddThings handleAddItem={handleAddProduct}/>
           </div>
           <div className="clients">
-            <h2>Nossos clients</h2>
+            <h2>Nossos clientes</h2>
             <Items itemsData={registeredClients}/>
-            <AddThins handleAddItem={handleAddClient}/>
+            <AddThings handleAddItem={handleAddClient}/>
           </div>
       </div>
       <div>

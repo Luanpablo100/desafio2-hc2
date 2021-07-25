@@ -1,0 +1,15 @@
+footer {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    position: fixed;
+    bottom: 0;
+    font-size: 13px;
+}
+
+footer a {
+    text-decoration: none;
+    color: blueviolet;
+}

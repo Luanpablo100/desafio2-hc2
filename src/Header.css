@@ -1,0 +1,9 @@
+header {
+    width: 100vw;
+    background-color: rgb(6, 2, 61);
+    padding: 10px 10px;
+}
+
+header h1 {
+    margin: 0;
+}

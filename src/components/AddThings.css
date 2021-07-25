@@ -1,0 +1,21 @@
+.input-add {
+    border: none;
+    border-radius: 5px 0 0 5px;
+    height: 30px;
+    padding: 0;
+    outline: none;
+    padding: 0px 10px;
+}
+
+.button-add {
+    background-color: rgb(6, 2, 61);
+    color: #eee;
+    height: 30px;
+    border-radius: 0 5px 5px 0;
+    border: none;
+    cursor: pointer;
+}
+
+.button-add:hover {
+    background-color: rgb(12, 5, 114);
+}
