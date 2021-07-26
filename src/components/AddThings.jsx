@@ -49,7 +49,7 @@ const AddThings = ({handleAddItem, whatIs}) => {
                     id="linkinput"
                 />
             </div>
-            <button className="button-add" onClick={handleAddTaskClick}>Adicionar<img src="/add.png" alt="Add image" className="add-img"/></button>
+            <button className="button-add" onClick={handleAddTaskClick}>Adicionar<img src="/add.png" alt={whatIs + "add image"} className="add-img"/></button>
         </div>
      );
 }
