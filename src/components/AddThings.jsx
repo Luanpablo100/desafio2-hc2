@@ -1,12 +1,19 @@
 import React, {useState} from 'react';
 import './AddThings.css'
 
-const AddThings = ({handleAddItem}) => {
+const AddThings = ({handleAddItem, whatIs}) => {
+    let dataName
+    let dataLink
 
     let [inputData, setInputData] = useState('')
         const handleAddTaskClick = () => {
-            let dataName = document.getElementById('nameinput').value
-            let dataLink = document.getElementById('linkinput').value
+            if(whatIs === "product") {
+                dataName = document.querySelector('.product-container #nameinput').value
+                dataLink = document.querySelector('.product-container #linkinput').value
+            } else if(whatIs === "client") {
+                dataName = document.querySelector('.client-container #nameinput').value
+                dataLink = document.querySelector('.client-container #linkinput').value
+            }
 
             inputData = {
                 name: dataName,

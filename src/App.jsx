@@ -59,14 +59,14 @@ const App = () => {
             <div className="products">
               <Items itemsData={registeredProducts}/>
             </div>
-            <AddThings handleAddItem={handleAddProduct}/>
+            <AddThings handleAddItem={handleAddProduct} whatIs="product"/>
           </div>
           <div className="client-container">
             <h2>Nossos parceiros</h2>
             <div className="clients">
               <Items itemsData={registeredClients}/>
             </div>
-            <AddThings handleAddItem={handleAddClient}/>
+            <AddThings handleAddItem={handleAddClient} whatIs="client"/>
           </div>
         </div>
     </div>
